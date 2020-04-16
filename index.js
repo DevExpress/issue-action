@@ -5,21 +5,21 @@ try {
     const msg = {
         "@type": "MessageCard",
         "@context": "https://schema.org/extensions",
-        "summary": "Issue " + github.context.payload.number,
+        "summary": "Issue " + github.context.payload.issue.id,
         "themeColor": "0078D7",
-        "title": "Issue opened: \"" + github.context.payload.title + "\"",
+        "title": "Issue opened: \"" + github.context.payload.issue.title + "\"",
         "sections": [
             {
-                "activityTitle": github.context.payload.user.login,
-                "activitySubtitle": github.context.payload.created_at,
-                "activityImage": github.context.payload.user.avatar_url,
+                "activityTitle": github.context.payload.sender.login,
+                "activitySubtitle": github.context.payload.issue.created_at,
+                "activityImage": github.context.payload.sender.avatar_url,
                 "facts": [
                     {
                         "name": "Issue #:",
-                        "value": github.context.payload.number
+                        "value": github.context.payload.issue.id
                     }
                 ],
-                "text": github.context.payload.body
+                "text": github.context.payload.issue.body
             }
         ],
         "potentialAction": [
