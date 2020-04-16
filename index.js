@@ -5,9 +5,9 @@ try {
     const obj = {
         "@type": "MessageCard",
         "@context": "https://schema.org/extensions",
-        "summary": "Issue " + github.context.payload.issue.id,
+        "summary": `Issue ${github.context.payload.issue.id}`,
         "themeColor": "0078D7",
-        "title": "Issue opened: \"" + github.context.payload.issue.title + "\"",
+        "title": `Issue opened: ${github.context.payload.issue.title}`,
         "sections": [
             {
                 "activityTitle": github.context.payload.sender.login,
