@@ -59,8 +59,7 @@ try {
             }
         ]
     };
-    const msg = JSON.stringify(obj)
-        .replace(/"/g, '\\"');
+    const msg = JSON.stringify(obj);
     core.setOutput('json', msg);
 } catch (error) {
     core.setFailed(error.message);
