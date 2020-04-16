@@ -1,0 +1,8 @@
+name: 'GitHub Issue Watcher'
+description: 'Send Teams notifications about open issues'
+outputs:
+    json:
+        description: 'A json-formatted message'
+runs:
+    using: 'node13'
+    main: 'index.js'
