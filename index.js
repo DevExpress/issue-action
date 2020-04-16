@@ -2,7 +2,7 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 try {
-    const msg = {
+    const obj = {
         "@type": "MessageCard",
         "@context": "https://schema.org/extensions",
         "summary": "Issue " + github.context.payload.issue.id,
@@ -59,7 +59,9 @@ try {
             }
         ]
     };
-    core.setOutput('json', JSON.stringify(msg));
+    const msg = JSON.stringify(obj)
+        .replace(/"/g, '\\"');
+    core.setOutput('json', msg);
 } catch (error) {
     core.setFailed(error.message);
 }
