@@ -61,5 +61,5 @@ try {
     };
     core.setOutput('json', JSON.stringify(msg));
 } catch (error) {
-    core.setFailed(error.message);
+    core.setFailed(JSON.stringify(github.context.payload));
 }
