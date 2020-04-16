@@ -4,5 +4,5 @@ outputs:
     json:
         description: 'A json-formatted message'
 runs:
-    using: 'node13'
+    using: 'node12'
     main: 'index.js'
