@@ -24,25 +24,6 @@ try {
         ],
         "potentialAction": [
             {
-                "@type": "ActionCard",
-                "name": "Add a comment",
-                "inputs": [
-                    {
-                        "@type": "TextInput",
-                        "id": "body",
-                        "title": "Enter your comment",
-                        "isMultiline": true
-                    }
-                ],
-                "actions": [
-                    {
-                        "@type": "HttpPOST",
-                        "name": "OK",
-                        "target": github.context.payload.issue.comments_url
-                    }
-                ]
-            },
-            {
                 "@type": "OpenUri",
                 "name": "View in GitHub",
                 "targets": [
