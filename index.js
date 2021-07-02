@@ -35,7 +35,7 @@ try {
             }
         ]
     };
-    const msg = JSON.stringify(obj).replace(/[\/\(\)\']/g, '&apos;');
+    const msg = JSON.stringify(obj).replace(/[\']/g, '&apos;');
     core.setOutput('json', msg);
 } catch (error) {
     core.setFailed(error.message);
